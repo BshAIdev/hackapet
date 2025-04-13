@@ -1701,19 +1701,20 @@ while True:
                                 dum = (game_entity3_sprite.x - 24)//8+(game_entity3_sprite.y - 48)//8*10
                             else:
                                 dum = 9-(game_entity3_sprite.x - 24)//8+(game_entity3_sprite.y - 48)//8*10
-                            if game_gala_en[dum]:
-                                game_gala_en[dum] = 0
-                                game_gala_ef = 1
-                                game_entity4_sprite.x = game_entity3_sprite.x//8*8
-                                game_entity4_sprite.y = game_entity3_sprite.y//8*8
-                                game_gala_ef_ani = 0
-                                game_gala_score += 1
-                                if(game_gala_score%10 == 0):
-                                    game_gala_cooltime -= 1
-                                    if(game_gala_cooltime == 0):
-                                        game_gala_cooltime =1
-                                game_gala_bullet = 0
-                                game_entity3_sprite.x = -128
+                            if(dum >= 0 and dum < 40):
+                                if game_gala_en[dum]:
+                                    game_gala_en[dum] = 0
+                                    game_gala_ef = 1
+                                    game_entity4_sprite.x = game_entity3_sprite.x//8*8
+                                    game_entity4_sprite.y = game_entity3_sprite.y//8*8
+                                    game_gala_ef_ani = 0
+                                    game_gala_score += 1
+                                    if(game_gala_score%10 == 0):
+                                        game_gala_cooltime -= 1
+                                        if(game_gala_cooltime == 0):
+                                            game_gala_cooltime =1
+                                    game_gala_bullet = 0
+                                    game_entity3_sprite.x = -128
                         if(game_entity3_sprite.y < 48):
                             game_gala_bullet = 0
                             game_entity3_sprite.x = -128
